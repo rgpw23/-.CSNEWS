@@ -1,0 +1,249 @@
+.register-header h1 {
+  color: #ffcc00;
+  font-family: 'Oswald', sans-serif;
+  font-size: 32px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.register-header p {
+  color: #aaa;
+  font-size: 16px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: #ccc;
+  margin-bottom: 8px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #111;
+  color: #fff;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #ffcc00;
+  box-shadow: 0 0 8px rgba(255, 204, 0, 0.3);
+}
+
+.register-btn {
+  width: 100%;
+  padding: 14px;
+  background: #ffcc00;
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.register-btn:hover {
+  background: #e0b200;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 204, 0, 0.3);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffcc00;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background: rgba(255, 204, 0, 0.1);
+  border: 2px solid #ffcc00;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+}
+
+.back-link:hover {
+  background: #ffcc00;
+  color: #111;
+  transform: translateX(-5px);
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  color: #aaa;
+}
+
+.login-link a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Индикатор силы пароля */
+.password-strength {
+  margin-top: 5px;
+  height: 5px;
+  border-radius: 2px;
+  background: #333;
+  overflow: hidden;
+}
+
+.password-strength-bar {
+  height: 100%;
+  width: 0%;
+  transition: all 0.3s ease;
+}
+
+.strength-weak {
+  background: #ff5050;
+  width: 33%;
+}
+
+.strength-medium {
+  background: #ffcc00;
+  width: 66%;
+}
+
+.strength-strong {
+  background: #50ff50;
+  width: 100%;
+}
+
+.password-hint {
+  color: #888;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
+}
+
+/* Сообщения */
+.success-message {
+  background: rgba(50, 255, 50, 0.1);
+  border: 1px solid #50ff50;
+  color: #50ff50;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  display: none;
+}
+
+.error-message {
+  background: rgba(255, 50, 50, 0.1);
+  border: 1px solid #ff5050;
+  color: #ff5050;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  display: none;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .register-container {
+    margin: 20px;
+    padding: 30px 20px;
+  }
+  
+  .register-header h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-container {
+    margin: 15px;
+    padding: 25px 15px;
+  }
+  
+  .register-header h1 {
+    font-size: 24px;
+  }
+  
+  .register-header p {
+    font-size: 14px;
+  }
+  
+  .form-group label {
+    font-size: 13px;
+  }
+  
+  .form-group input {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+  .register-btn {
+    padding: 12px;
+    font-size: 15px;
+  }
+}
+
+.register-page {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.register-page header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.register-container {
+  max-width: 450px;
+  margin: 140px auto 40px; 
+  padding: 40px;
+  background: rgba(30, 30, 30, 0.95);
+  border-radius: 15px;
+  border: 2px solid #ffcc00;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 1;
+}

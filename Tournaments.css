@@ -1,0 +1,384 @@
+.tournaments-page {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.tournaments-main {
+    flex: 1;
+    margin-top: 100px;
+    padding: 40px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Шапка турниров */
+.tournaments-header {
+    text-align: center;
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.tournaments-header h1 {
+    font-size: 48px;
+    color: #ffcc00;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 10px rgba(255, 204, 0, 0.3);
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.tournaments-header .subtitle {
+    color: #aaa;
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Фильтры турниров */
+.tournaments-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.filter-btn {
+    background: rgba(40, 40, 40, 0.8);
+    color: #ccc;
+    padding: 12px 25px;
+    border: 2px solid #444;
+    border-radius: 25px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-btn:hover {
+    background: rgba(255, 204, 0, 0.1);
+    border-color: #ffcc00;
+    color: #ffcc00;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: #ffcc00;
+    color: #111;
+    border-color: #ffcc00;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+}
+
+.filter-btn i {
+    font-size: 14px;
+}
+
+/* Контейнер турниров */
+.tournaments-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Карточка турнира */
+.tournament-card {
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease;
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.tournament-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(255, 204, 0, 0.2);
+    border-color: #ffcc00;
+}
+
+/* Изображение турнира */
+.tournament-image {
+    height: 180px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.tournament-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tournament-badge.upcoming {
+    background: rgba(50, 150, 255, 0.9);
+    color: white;
+}
+
+.tournament-badge.ongoing {
+    background: rgba(50, 255, 50, 0.9);
+    color: #111;
+}
+
+.tournament-badge.past {
+    background: rgba(255, 50, 50, 0.9);
+    color: white;
+}
+
+.tournament-badge.major {
+    background: rgba(255, 204, 0, 0.9);
+    color: #111;
+}
+
+/* Содержимое карточки */
+.tournament-content {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tournament-content h3 {
+    color: #fff;
+    font-size: 22px;
+    margin: 0 0 10px 0;
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.3;
+    min-height: 55px;
+}
+
+.tournament-prize {
+    color: #ffcc00;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tournament-dates {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tournament-location {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tournament-location i {
+    color: #ff5050;
+}
+
+.tournament-teams {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.team-badge {
+    background: #222;
+    color: #ccc;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.tournament-details {
+    background: transparent;
+    color: #ffcc00;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: 2px solid #ffcc00;
+    text-align: center;
+    display: inline-block;
+    width: fit-content;
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.tournament-details:hover {
+    background: #ffcc00;
+    color: #111;
+    transform: translateX(5px);
+}
+
+/* Информационные карточки */
+.tournaments-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.info-card {
+    background: rgba(40, 40, 40, 0.8);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    border-color: #ffcc00;
+    transform: translateY(-5px);
+}
+
+.info-card i {
+    font-size: 40px;
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+.info-card h3 {
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    color: #aaa;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* АДАПТИВНОСТЬ */
+@media (max-width: 1100px) {
+    .tournaments-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .tournaments-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .tournaments-header h1 {
+        font-size: 36px;
+    }
+    
+    .tournaments-container {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+    
+    .tournaments-info {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+    
+    .tournaments-filter {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        flex-wrap: nowrap;
+    }
+    
+    .filter-btn {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .tournaments-header h1 {
+        font-size: 28px;
+    }
+    
+    .tournaments-header .subtitle {
+        font-size: 16px;
+    }
+    
+    .tournament-content h3 {
+        font-size: 20px;
+        min-height: 45px;
+    }
+}
+
+/* Анимация загрузки */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tournament-card {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+/* Стили для скелетона */
+.tournament-card.skeleton {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}

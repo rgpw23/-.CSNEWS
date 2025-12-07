@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Турниры CS2 - CS2 Analytics</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="tournaments.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Локальные стили только для страницы турниров */
+        .tournaments-page header {
+            background: linear-gradient(135deg, #111 0%, #222 100%) !important;
+            border-bottom: 3px solid #ffcc00 !important;
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .tournaments-page .header-video {
+            display: none !important;
+        }
+        
+        .tournaments-page nav {
+            position: absolute !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            z-index: 1001 !important;
+        }
+        
+        .tournaments-page nav ul li a {
+            background: rgba(255, 204, 0, 0.1) !important;
+            border: 1px solid transparent !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .tournaments-page nav ul li a:hover {
+            background: rgba(255, 204, 0, 0.3) !important;
+            border-color: #ffcc00 !important;
+            transform: translateY(-2px) !important;
+        }
+        
+        .tournaments-page nav ul li a[href*="tournaments.html"] {
+            background: #ffcc00 !important;
+            color: #111 !important;
+            font-weight: bold !important;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3) !important;
+        }
+        
+        .tournaments-page .header-right {
+            z-index: 1001 !important;
+            position: relative !important;
+        }
+        
+        .tournaments-page .auth-tab {
+            z-index: 1002 !important;
+            position: relative !important;
+        }
+        
+        .tournaments-main {
+            margin-top: 100px !important;
+        }
+    </style>
+</head>
+<body class="tournaments-page">
+    
+    <header>
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <img src="pngs/Comp 1_00000.png" alt="CS2 Logo">
+            </a>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="NewsPage.html">Новости</a></li>
+                <li><a href="https://www.hltv.org/ranking/teams/2025/december/1">Команды</a></li>
+                <li><a href="tournaments.html">Турниры</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header-right">
+            <div class="auth-tabs-header" id="authTabs">
+                <a href="login.html" class="auth-tab login-tab">
+                    <i class="fas fa-sign-in-alt"></i> Вход
+                </a>
+                <a href="register.html" class="auth-tab register-tab">
+                    <i class="fas fa-user-plus"></i> Регистрация
+                </a>
+            </div>
+            
+            <div class="user-logged-in-info" id="userLoggedInInfo" style="display: none;">
+                <div class="user-greeting">
+                    <div class="user-avatar-small">
+                        <span id="userAvatarText">U</span>
+                    </div>
+                    <span class="user-name" id="userNameDisplay">Пользователь</span>
+                </div>
+                <button class="logout-btn" id="logoutBtnHeader">
+                    <i class="fas fa-sign-out-alt"></i> Выйти
+                </button>
+            </div>
+        </div>
+        <!-- Бургер-меню кнопка -->
+<button class="burger-menu" id="burgerMenu">
+    <span class="burger-line"></span>
+    <span class="burger-line"></span>
+    <span class="burger-line"></span>
+</button>
+
+        <!-- Мобильное меню -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="Tournaments.html" class="active"><i class="fas fa-trophy"></i>Турниры</a></li>
+                <li><a href="https://www.hltv.org/ranking/teams/2025/december/1"><i class="fas fa-users"></i>Команды</a></li>
+                <li><a href="NewsPage.html"><i class="fas fa-newspaper"></i>Новости</a></li>
+                <li><a href="login.html"><i class="fas fa-sign-in-alt"></i>Вход</a></li>
+                <li><a href="register.html"><i class="fas fa-user-plus"></i>Регистрация</a></li>
+            </ul>
+        </div>
+
+        <!-- Оверлей -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+    </header>
+
+    <main class="tournaments-main">
+        
+        
+        <div class="tournaments-filter">
+            <button class="filter-btn active" data-filter="all">Все турниры</button>
+            <button class="filter-btn" data-filter="upcoming">Предстоящие</button>
+            <button class="filter-btn" data-filter="ongoing">Текущие</button>
+            <button class="filter-btn" data-filter="past">Завершенные</button>
+            <button class="filter-btn" data-filter="major">Мейджоры</button>
+        </div>
+        
+        <div class="tournaments-container">
+            <!-- Турниры будут загружены через JavaScript -->
+        </div>
+        
+        
+    </main>
+
+    <script>
+        fetch('index.html')
+            .then(r => r.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const footer = doc.querySelector('footer');
+                if (footer) document.body.appendChild(footer);
+            });
+    </script>
+    
+    <script src="auth.js"></script>
+    <script src="tournaments.js"></script>
+    <script src="mobile-menu.js"></script>
+</body>
+</html>

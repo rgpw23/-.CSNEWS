@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход - CS2 Analytics</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="login.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="login-page">
+
+<!-- СКОПИРОВАННАЯ ШАПКА С MainPage.html -->
+<header>
+  <div class="logo">
+    <a href="index.html" class="logo-link">
+      <img src="pngs/Comp 1_00000.png" alt="CS2 Logo">
+    </a>
+    <video autoplay muted playsinline class="header-video">
+      <source src="videos/2025-12-04 21.56.08.mov" type="video/mp4">
+      Ваш браузер не поддерживает видео.
+    </video>
+  </div>
+  
+
+  
+
+<div class="header-right">
+  <div class="auth-tabs-header" id="authTabs">
+    <a href="login.html" class="auth-tab login-tab active">
+      <i class="fas fa-sign-in-alt"></i> Вход
+    </a>
+    <a href="register.html" class="auth-tab register-tab">
+      <i class="fas fa-user-plus"></i> Регистрация
+    </a>
+  </div>
+  
+
+  <div class="user-logged-in-info" id="userLoggedInInfo" style="display: none;">
+    <div class="user-greeting">
+      <div class="user-avatar-small">
+        <span id="userAvatarText">U</span>
+      </div>
+      <span class="user-name" id="userNameDisplay">Пользователь</span>
+    </div>
+    <button class="logout-btn" id="logoutBtnHeader">
+      <i class="fas fa-sign-out-alt"></i> Выйти
+    </button>
+  </div>
+  
+</div>
+</header>
+  <div class="login-container">
+    <div class="login-header">
+      <h1><i class="fas fa-sign-in-alt"></i> Вход в систему</h1>
+      <p>Введите ваши учетные данные для входа</p>
+    </div>
+    
+    <form id="loginForm" class="login-form">
+      <div class="form-group">
+        <label for="loginEmail"><i class="fas fa-envelope"></i> Email:</label>
+        <input type="email" id="loginEmail" name="email" placeholder="Введите ваш email" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="loginPassword"><i class="fas fa-lock"></i> Пароль:</label>
+        <input type="password" id="loginPassword" name="password" placeholder="Введите ваш пароль" required>
+      </div>
+      
+      <button type="submit" class="login-btn">
+        <i class="fas fa-sign-in-alt"></i> Войти
+      </button>
+      
+      <div class="register-link">
+        Нет аккаунта? <a href="register.html">Зарегистрируйтесь</a>
+      </div>
+      
+      <a href="index.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Вернуться на главную
+      </a>
+    </form>
+  </div>
+
+  <!-- Футер такой же как на главной -->
+  <footer>
+    <div class="footer-content">
+      
+      <div class="footer-section">
+        <h2>Контакты</h2>
+        <address>
+          Email: <a href="mailto:markevich.n.s@edu.miera">markevich.n.s@edu.miera</a><br>
+          Телефон: <a href="tel:+79199664992">+7(919)966-49-92</a>
+        </address>
+      </div>
+      
+      <div class="footer-section">
+        <h2>Быстрые ссылки</h2>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+          <li><a href="NewsPage.html"><i class="fas fa-newspaper"></i> Новости</a></li>
+          <li><a href="teams.html"><i class="fas fa-users"></i> Команды</a></li>
+          <li><a href="tournaments.html"><i class="fas fa-trophy"></i> Турниры</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h2>Обратная связь</h2>
+        <p>Ваше мнение важно для нас!</p>
+        <a href="feedback.html" class="feedback-btn">
+          <i class="fas fa-comment-dots"></i> Оставить отзыв
+        </a>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p><a href="#top">Вернуться наверх</a></p>
+      <p>© 2024 CS2 Analytics. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="login.js"></script>
+  <script src="mobile-menu.js"></script>
+</body>
+</html>
